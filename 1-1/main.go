@@ -20,6 +20,8 @@ func main() {
 		panic(err)
 	}
 
+	defer file.Close()
+
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
 

@@ -17,9 +17,12 @@ func isNumeric(value string) bool {
 
 func main() {
 	file, err := os.Open("1-2/input.txt")
+
 	if err != nil {
 		panic(err)
 	}
+
+	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
